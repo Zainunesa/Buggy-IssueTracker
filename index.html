@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Admin Issue Tracker</title>
+
+    <!-- Google Fonts for nicer text styling -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Link to external CSS file for styling -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Link to JavaScript file for interactivity -->
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- HEADER SECTION -->
+      <header class="app-header">
+        <!-- App title -->
+        <h1>Buggy</h1>
+        <br>
+        <h3>Issue Tracker</h3>
+
+        <!-- Exit button (× symbol) -->
+        <button id="exit-btn" class="exit-btn">&times;</button>
+      </header>
+
+      <!-- MAIN SECTION -->
+      <main class="app-main">
+
+        <!-- SPLASH PAGE (First screen shown when app opens) -->
+        <div id="splash-page" class="page active">
+          <div class="splash-actions">
+            <!-- Button for workers to report a new issue -->
+            <button id="worker-btn" class="main-action-btn">
+              Report an Issue
+            </button>
+            <!-- Button for admins to log in -->
+            <button id="admin-btn" class="main-action-btn">Admin Login</button>
+          </div>
+        </div>
+
+        <!-- WORKER FORM (For reporting issues) -->
+        <div id="worker-form" class="page">
+          <h2>Report a New Issue</h2>
+          <form id="issue-report-form">
+            <!-- Input for issue title -->
+            <input
+              type="text"
+              id="worker-issue-title"
+              placeholder="Issue Title"
+              required
+            />
+
+            <!-- Input for issue description -->
+            <textarea
+              id="worker-issue-description"
+              placeholder="Issue Description"
+              required
+            ></textarea>
+
+            <!-- Dropdown for issue priority (low, medium, high) -->
+            <label for="worker-issue-priority">Priority:</label>
+            <select id="worker-issue-priority" required>
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
+
+            <!-- Button to submit the issue -->
+            <button type="submit" id="add-worker-issue-btn">Add Issue</button>
+          </form>
+        </div>
+
+        <!-- ADMIN LOGIN PAGE -->
+        <div id="admin-login-form" class="page">
+          <h2>Admin Login</h2>
+          <form id="login-form">
+            <!-- Admin username input -->
+            <input
+              type="text"
+              id="username"
+              placeholder="Username"
+              required
+            />
+            <!-- Admin password input -->
+            <input
+              type="password"
+              id="password"
+              placeholder="Password"
+              required
+            />
+            <!-- Button to log in -->
+            <button type="submit" id="login-btn">Login</button>
+          </form>
+        </div>
+
+        <!-- MAIN APP PAGE (visible after admin logs in) -->
+        <div id="main-app" class="page">
+          <!-- Dropdown to filter issues by status -->
+          <div class="filter-controls">
+            <label for="status-filter">Filter by Status:</label>
+            <select id="status-filter">
+              <option value="all">All</option>
+              <option value="open">Open</option>
+              <option value="resolved">Resolved</option>
+            </select>
+          </div>
+
+          <!-- List where reported issues will appear -->
+          <div class="issues-list" id="issues-list"></div>
+        </div>
+
+        <!-- SUCCESS PAGE (after a worker submits an issue) -->
+        <div id="worker-success" class="page">
+          <h2>Issue Submitted!</h2>
+          <p>Your issue has been successfully reported. The admins will look into it shortly. 🧑‍💻</p>
+          <button id="close-tab-btn" class="main-action-btn">Close Tab</button>
+        </div>
+      </main>
+
+      <!-- FOOTER SECTION -->
+      <footer class="app-footer">
+        <!-- Logout button (only visible when logged in as admin) -->
+        <button id="logout-btn" class="logout-btn" style="display: none">
+          Logout
+        </button>
+      </footer>
+    </div>
+  </body>
+</html>

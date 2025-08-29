@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Admin Issue Tracker",
+  "version": "1.0",
+  "description": "A simple issue tracker for admins built as a browser extension.",
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "images/image-16.png"
+    }
+  },
+  "icons": {
+    "16": "images/image-16.png"
+  },
+  "permissions": ["storage"]
+}
