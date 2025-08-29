@@ -2,7 +2,7 @@
 
 # 🐞 Buggy: A Simple Issue Tracker Extension
 
-Welcome to Buggy! This project is a simple, browser-based issue tracker built as a Chrome extension. It allows a team to report issues and for an admin to view, manage, and resolve them. This README will guide you through the project's structure, how to install and use the extension, and what's next for its development.
+Welcome to Buggy! This project is a simple, browser-based issue tracker built as a Chrome extension. The project is build with HTML, CSS and JavaScript. It allows a team to report issues and for an admin to view, manage, and resolve them. This README will guide you through the project's structure, how to install and use the extension, and what's next for its development.
 
 ---
 
